@@ -7,7 +7,7 @@ PluginEditor::PluginEditor (PluginProcessor& p)
 
     addAndMakeVisible (inspectButton);
 
-    // this chunk of code instantiates and opens the melatonin inspector
+    // instantiate and opens the melatonin inspector
     inspectButton.onClick = [&] {
         if (!inspector)
         {
@@ -18,8 +18,6 @@ PluginEditor::PluginEditor (PluginProcessor& p)
         inspector->setVisible (true);
     };
 
-    // Make sure that before the constructor has finished, you've set the
-    // editor's size to whatever you need it to be.
     setSize (400, 300);
 }
 
@@ -29,7 +27,6 @@ PluginEditor::~PluginEditor()
 
 void PluginEditor::paint (juce::Graphics& g)
 {
-    // (Our component is opaque, so we must completely fill the background with a solid colour)
     g.fillAll (getLookAndFeel().findColour (juce::ResizableWindow::backgroundColourId));
 
     auto area = getLocalBounds();
@@ -41,7 +38,6 @@ void PluginEditor::paint (juce::Graphics& g)
 
 void PluginEditor::resized()
 {
-    // layout the positions of your child components here
     auto area = getLocalBounds();
     area.removeFromBottom(50);
     inspectButton.setBounds (getLocalBounds().withSizeKeepingCentre(100, 50));
