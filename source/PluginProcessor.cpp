@@ -49,21 +49,6 @@ bool PluginProcessor::isMidiEffect() const
    #endif
 }
 
-double PluginProcessor::getTailLengthSeconds() const
-{
-    return 0.0;
-}
-
-int PluginProcessor::getNumPrograms()
-{
-    return 1;
-}
-
-int PluginProcessor::getCurrentProgram()
-{
-    return 0;
-}
-
 void PluginProcessor::setCurrentProgram (int index)
 {
     juce::ignoreUnused (index);
@@ -127,11 +112,6 @@ void PluginProcessor::processBlock (juce::AudioBuffer<float>& buffer,
         juce::ignoreUnused (channelData);
         // ..do something to the data...
     }
-}
-
-bool PluginProcessor::hasEditor() const
-{
-    return true;
 }
 
 juce::AudioProcessorEditor* PluginProcessor::createEditor()

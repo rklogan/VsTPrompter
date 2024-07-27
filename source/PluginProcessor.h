@@ -100,7 +100,7 @@ public:
      *      virtual juce::AudioProcessor::hasEditor()
      *  </a>
      */
-    bool hasEditor() const override;
+    bool hasEditor() const override { return true; }
 
     /**
      * @brief Returns the name of the processor
@@ -155,7 +155,7 @@ public:
      *      virtual juce::AudioProcessor::getTailLengthSeconds()
      *  </a>
      */
-    double getTailLengthSeconds() const override;
+    double getTailLengthSeconds() const override { return 0.0; }
 
     /**
      * @brief Returns the number of the currently active program.
@@ -165,7 +165,7 @@ public:
      *      virtual juce::AudioProcessor::getCurrentProgram()
      *  </a>
      */
-    int getNumPrograms() override;
+    int getNumPrograms() override { return 1; }
 
     /**
      * @brief Returns the number of the currently active program.
@@ -175,7 +175,7 @@ public:
      *      virtual juce::AudioProcessor::getCurrentProgram()
      *  </a>
      */
-    int getCurrentProgram() override;
+    int getCurrentProgram() override { return 0; }
 
     /**
      * @brief Called by the host to change the current program.
